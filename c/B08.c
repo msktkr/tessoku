@@ -13,8 +13,8 @@ int main(){
 
   rui = (int *)malloc(sizeof(int) * hen);
 
-  points = (int **)malloc(sizeof(int) * hen);
-  mat    = (int **)malloc(sizeof(int) * hen);
+  points = (int **)malloc(sizeof(int *) * hen);
+  mat    = (int **)malloc(sizeof(int *) * hen);
 
   for(i = 0; i < hen; i++){
     points[i] = (int *)malloc(sizeof(int) * hen);
