@@ -1,0 +1,20 @@
+(define (ResortHotel)
+  (let* [(N (read))
+         (heya (make-vector N 0))
+         (heyah (make-vector N 0))
+         (heyat (make-vector N 0))
+         (mh 0) (mt 0)]
+    (dotimes (i N)
+             (vector-set! heya i (read)))
+    (dotimes (i N)
+             (vector-set! heyah i (max mh (vector-ref heya i)))
+             (set! mh (vector-ref heyah i))
+             (vector-set! heyat (- N 1 i) (max mt (vector-ref heya (- N 1 i))))
+             (set! mt (vector-ref heyat (- N 1 i))))
+    (let [(D (read))]
+      (dotimes (D)
+               (display (max (vector-ref heyah (- (read) 2))
+                             (vector-ref heyat  (read))))
+               (newline)))))
+
+(ResortHotel)
